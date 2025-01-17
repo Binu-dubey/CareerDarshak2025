@@ -1,0 +1,197 @@
+{% extends 'website/base.html' %}
+{% load static %}
+<body>
+<!-- Main Content -->
+{% block hero %}
+
+<div >
+    <div class="desc mb-15" style="height: 80vh; width: 96vw; background-image: url('{% static "images/red-paper.jpg" %}'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; margin: 20px; overflow-x:hidden;">
+     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="3000">
+       <!-- Indicators -->
+       <ol class="carousel-indicators">
+         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+         <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+         <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+       </ol>
+   
+       <!-- Wrapper for slides -->
+       <div class="carousel-inner">
+         <!-- Slide 1 -->
+         <div class="carousel-item active">
+           <div class="carousel-content" >
+             <div class="content-left"style="overflow: hidden;width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+               <h1 class="textImage">
+                 <span style="color:#007bff">Empowering</span> Your 
+                 <div class="scroller" style="overflow-x:hidden;">
+                   <span>Career<br/>Future<br/></span>
+                  
+                 </div>
+               </h1>
+               <p>Tailored Career Insights for Every Step Forward</p>
+             </div>
+             <img src="{% static 'images/youngBoy.png' %}" class="d-block mx-auto img-fluid" alt="Slide 1 Image">
+             <div class="carousel-caption"></div>
+           </div>
+         </div>
+   
+         <!-- Slide 2 -->
+         <div class="carousel-item">
+           <div class="carousel-content">
+             <div class="content-left"style="overflow: hidden; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center;">
+               <h1>
+                 <span style="color:#007bff">Empowering</span> Your 
+                 <div class="scroller">
+                   <span>Career<br/>Future<br/></span>
+                  
+                 </div>
+               </h1>
+               <p>Tailored Career Insights for Every Step Forward</p>
+             </div>
+
+             <img src="{% static 'images/girlTwo.png' %}" class="d-block mx-auto img-fluid" alt="Slide 2 Image">
+             <div class="carousel-caption"></div>
+           </div>
+         </div>
+   
+         <!-- Slide 3 -->
+         <div class="carousel-item">
+           <div class="carousel-content">
+             <div class="content-left"style="overflow: hidden;width: 100%; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center;">
+               <h1>
+                 <span style="color:#007bff">Empowering</span> Your 
+                 <div class="scroller">
+                   <span>Career<br/>Future<br/></span>
+                   
+                 </div>
+               </h1>
+               <p>Tailored Career Insights for Every Step Forward</p>
+             </div>
+             
+             <img src="{% static 'images/girlOne.png' %}" class="d-block mx-auto img-fluid" alt="Slide 3 Image">
+             
+           </div>
+         </div>
+       </div>
+   
+       <!-- Controls -->
+       <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
+       </a>
+       <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+       </a>
+     </div>
+   </div> 
+{% endblock hero %}
+<!-- decsc Content -->
+{% block content %}
+<section id="detect-deepfakes" style="display: flex;  width:100%; justify-content: center; align-items: center; padding: 40px 20px; margin: 5px">
+    
+    <h2 style="overflow: hidden;">Shaping the Career Guidance Landscape</h2>
+        <h3 style="overflow: hidden;">Comprehensive career guidance solutions for secondary students</h3>
+    
+        
+        <div class="steps">
+            <div class="step " style="overflow: hidden;">
+                <div class="icon">
+                    <img src="{% static "images/image1.png" %}" alt="Upload Icon">
+                </div>
+                <div class="step-text">
+                    
+                    <p>Enable students to identify their best-fit career with our world-class career assessment and personalised guidance.</p>
+                </div>
+            </div>
+            <div class="step"style="overflow: hidden;">
+                <div class="icon">
+                    <img src="{% static "images/image2.png" %}" alt="Upload Icon">
+                </div>
+                <div class="step-text"style="overflow: hidden;">
+                    
+                    <p>Revolutionary assessment platform and technology driven career guidance solutions for educators to boost their career guidance & counselling practice</p>
+                </div>
+            </div>
+            <div class="step"style="overflow: hidden;">
+                <div class="icon">
+                    <img src="{% static "images/image3.png" %}" alt="Download Icon">
+                </div>
+                <div class="step-text">
+                    
+                    <p>Empower students to learn all about the professional world with virtual career simulations, exhaustive career library, career blogs and vlogs.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+
+        <section class="programs-section">
+            <div class="programs-header">
+                <h2>Our Programs</h2>
+                <p>Personalized career guidance process.</p>
+            </div>
+        
+            <div class="programs-categories">
+                <div class="category">
+                    <img src="{% static "images/carcoun.png" %}" alt="">
+                    <h3>Career counseling </h3>
+                </div>
+                <div class="category">
+                    <img src="{% static "images/roadmap.png" %}" alt="">
+                    <h3>Roadmaps</h3>
+                </div>
+                <div class="category">
+                    <img src="{% static "images/job.png" %}" alt="">
+                    <h3>Job Shadowing</h3>
+                </div>
+            </div>
+        
+            <div class="programs-content">
+                <div class="program-column">
+                    <h4>CAREER COUNSELLING PROGRAMS</h4>
+                    <h5>Class 8-10</h5>
+                    <p>Stream & Subject Selection</p>
+                    <p>Advanced 5-dimensional assessment & personalized guidance to help you select the perfect stream and subjects that align you to the right careers. </p>
+                    <a href="#">View Program Details</a>
+        
+                    
+                </div>
+        
+                <div class="program-column">
+                    <h4>Roadmaps</h4>
+                    <p>Career Selection & Planning</p>
+                    <p>superior guidance to help you discover your perfect career and choose the best next step. discover your perfect career and choose the right course and college. </p>
+                    <a href="#">View Program Details</a>
+        
+                   
+                </div>
+        
+                <div class="program-column">
+                    <h4>Job Shadowing</h4>
+                    <p>Observe Yourself in Your perfect Career</p>
+                    <p>Discover Your Perfect Career fit with job Shad- Where Personalized insights illuminates your path to success</p>
+                    <a href="#">View Program Details</a>
+                </div>
+            </div>
+        </section>
+      </div>        
+<div class="desc mb-15 " style="font-size: xx-large;height: 50vh;  background-color: #ecf5f2"> 
+  <h1 class="textImage h-40 " style="color:rgb(100, 105, 31);">Your Path to Success with AI-Driven Career Guidance</h1>
+  <h3 style="color:rgb(36, 37, 37);">"Unlock Your Future: <span style="font-size: 1.5rem; font-weight: bold; color:rgb(36, 37, 37);  letter-spacing: 1px; transition: color 0.3s ease;">Explore, Discover, and Shape Your Ideal Career with AI-Powered Insights"</span></h3>
+  <a href="{% url 'psychometric_test' %}" class="login-button font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">Start your assessment</a>
+</div>
+        
+{% endblock content %}
+<!-- Footer -->
+<script>
+    window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) { // Adjust the scroll distance as needed
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+</script>
+</body>
+</html>

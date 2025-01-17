@@ -1,0 +1,22 @@
+{% extends "website/base.html" %}
+{% load static tailwind_tags %}
+{% load static %}
+{% block content %}
+<body class="bg-gray-100">
+    <main class="w-3/4 bg-white p-10">
+        <h1 class="text-3xl font-bold mb-6">{{ branch.name }}</h1>
+
+        <!-- Image and Pathway -->
+        <div class="grid grid-cols-2 gap-10">
+            <img src="{{ branch.image.url }}" alt="{{ branch.name }}" class="w-full h-auto object-cover shadow-lg rounded">
+            <img src="{{ branch.career_path_image.url }}" alt="Career Path" class="w-full h-auto object-cover shadow-lg rounded">
+        </div>
+        <div class="mt-10">
+            <h2 class="text-2xl font-semibold mb-4">Introduction Video</h2>
+            <video controls class="w-full h-auto shadow-lg rounded">
+                <source src="{{ branch.video.url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </main>
+{% endblock content %}

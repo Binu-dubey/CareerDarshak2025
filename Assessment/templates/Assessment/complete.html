@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header Section -->
+    <header class="bg-yellow-600 text-white py-6 shadow-md">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">Career Prediction Results</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto my-8 px-4">
+        <!-- Welcome Section -->
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Welcome, {{ request.user.username }}!</h2>
+            <p class="text-lg">Thank you for completing the assessment. Here are your results:</p>
+        </section>
+
+        <!-- Career Recommendations -->
+        <section class="bg-green-100 shadow-lg rounded-lg p-6 mb-8">
+            <h3 class="text-2xl font-semibold text-blue-800 mb-4">Your Career Recommendations</h3>
+            <ul class="list-disc list-inside space-y-2">
+                {% for career in recommended_careers %}
+                <li class="text-lg">{{ career }}</li>
+                {% endfor %}
+            </ul>
+            <p class="mt-4 text-gray-700">{{ explanation }}</p>
+            <p>You can explore more in career library </p>
+        </section>
+
+        <!-- Scores Section -->
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Psychometric Scores -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Psychometric Scores</h4>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between"><span>O Score:</span> <strong>{{ profile.o_score }}</strong></li>
+                        <li class="flex justify-between"><span>C Score:</span> <strong>{{ profile.c_score }}</strong></li>
+                        <li class="flex justify-between"><span>E Score:</span> <strong>{{ profile.e_score }}</strong></li>
+                        <li class="flex justify-between"><span>A Score:</span> <strong>{{ profile.a_score }}</strong></li>
+                        <li class="flex justify-between"><span>N Score:</span> <strong>{{ profile.n_score }}</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Aptitude Scores -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Aptitude Scores</h4>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between"><span>Numerical Ability:</span> <strong>{{ profile.numerical_ability }}</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Reasoning Scores -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">Reasoning Scores</h4>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between"><span>Verbal Reasoning:</span> <strong>{{ profile.verbal_reasoning }}</strong></li>
+                        <li class="flex justify-between"><span>Logical Reasoning:</span> <strong>{{ profile.logical_reasoning }}</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Home Button -->
+        <div class="mt-8 text-center">
+            <a href="{% url 'home' %}" class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition">
+                Back to Home
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Career Prediction App. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,193 @@
+{% extends 'website/base.html'%}
+{% load static tailwind_tags %}
+{% load static %}
+{% block title %}About careerDarshak{% endblock title %}
+{% block content %}
+<div class="bg-gray-50 py-12" style="background-image: url('{% static "images/bgabout.jpg" %}'); background-size: cover; background-position: center;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- About Us Section -->
+        <div class=" mb-12">
+            <h2 class="text-3xl font-extrabold text-center text-gray-900 sm:text-4xl">About Us</h2>
+            <p class="mt-4 text-lg text-center text-white-600">Your Path to Success with AI-Driven Career Guidance</p>
+            
+        </div>
+
+        <!-- Our Mission Section -->
+        <div class="flex flex-col lg:flex-row items-center mb-16">
+            
+            <div class="lg:w-1/2 lg:pl-12 mt-8 lg:mt-0">
+                <h3 class="text-2xl font-bold text-black">Our Mission</h3>
+                <p class="mt-2 text-lg text-gray-900">Shaping the Career Guidance Landscape</p>
+                <p class="mt-4 text-green font-bold">To provide students with the tools they need to identify their best-fit career paths, backed by world-class career assessment tools and personalized, actionable insights.</p>
+            </div>
+            <div class="lg:w-1/2">
+                {% comment %} <img class="rounded-lg" src="/static/images/mission.jpg" alt="Our Mission"> {% endcomment %}
+            </div>
+        </div>
+
+        <!-- Our Story Section -->
+        <div class="flex flex-col lg:flex-row-reverse items-center mb-16">
+           
+            <div class="lg:w-1/2 lg:pr-12 mt-8 lg:mt-0">
+                <h3 class="text-2xl font-bold text-gray-900">Shaping the Career Guidance Landscape</h3>
+                <p class="mt-4 text-purple">At Career Darshak, we are transforming the way secondary students explore, choose, and shape their career paths. Our comprehensive, AI-driven solutions provide personalized career assessments, expert guidance, and insightful resources, ensuring students are empowered to make informed decisions about their futures.</p>
+            </div>
+            <div class="lg:w-1/2">
+                {% comment %} <img class="rounded-lg shadow-lg" src="" alt="Our Story"> {% endcomment %}
+            </div>
+        </div>
+
+        <!-- Our Services Section -->
+        <div class="text-center mb-12">
+            <h3 class="text-2xl font-bold text-gray-900">Our Services</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-bold text-gray-900">Career Counseling</h4>
+                <p class="mt-2 text-gray-600">Personalized sessions to guide students through their strengths, interests, and aspirations.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-bold text-gray-900">Roadmaps for Career Selection</h4>
+                <p class="mt-2 text-gray-600">Tailored pathways from education to employment, ensuring informed decisions every step of the way.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-bold text-gray-900">Job Shadowing Programs</h4>
+                <p class="mt-2 text-gray-600">Real-world insights by observing professionals in chosen fields.</p>
+            </div>
+        </div>
+
+       <!-- Success Stories Section -->
+<div class="text-center my-12">
+    <h3 class="text-2xl font-bold text-gray-900">Success Stories</h3>
+    <div class="mt-8 space-y-8">
+        <!-- Story 1: Image on the left -->
+        <div class="flex flex-col md:flex-row items-center  p-6 rounded-lg shadow-md">
+            <img class="w-24 h-24 rounded-full object-cover mr-6" src="/static/images/neha.avif" alt="Neha">
+            <p class="text-gray-600 italic">&ldquo;Neha’s journey from confusion to landing her dream career in software engineering is a testament to the power of personalized guidance.&rdquo;</p>
+        </div>
+        <!-- Story 2: Image on the right -->
+        <div class="flex flex-col md:flex-row items-center  p-6 rounded-lg shadow-md">
+            <p class="text-gray-600 italic mr-6">&ldquo;Arjun’s passion for healthcare was ignited through our 5-dimensional assessment, guiding him to a pre-med program.&rdquo;</p>
+            <img class="w-24 h-24 rounded-full object-cover" src="/static/images/arjun.avif" alt="Arjun">
+        </div>
+        <!-- Story 3: Image on the left -->
+        <div class="flex flex-col md:flex-row items-center  p-6 rounded-lg shadow-md">
+            <img class="w-24 h-24 rounded-full object-cover mr-6" src="/static/images/sanya.avif" alt="Sanya">
+            <p class="text-gray-600 italic">&ldquo;Sanya’s job shadowing experience clarified her dream of becoming an architect.&rdquo;</p>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Career Resources Section -->
+        <div class="text-center mb-12">
+            <h3 class="text-2xl font-bold text-gray-900">Career Resources</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-bold text-gray-900">Virtual Career Simulations</h4>
+                <p class="mt-2 text-gray-600">Experience a day in the life of professionals across industries.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-bold text-gray-900">Career Library</h4>
+                <p class="mt-2 text-gray-600">A detailed resource on various professions, qualifications, and career paths.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-bold text-gray-900">Career Blogs & Vlogs</h4>
+                <p class="mt-2 text-gray-600">Stay updated on career trends, skills, and real-life experiences.</p>
+            </div>
+        </div>
+        <!-- Our Team Section -->
+<div class=" py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8">Meet Our Team</h3>
+
+        <!-- Bootstrap Carousel -->
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Carousel Items -->
+            <div class="carousel-inner">
+                <!-- Team Member 1 -->
+                <div class="carousel-item active">
+                    <div class="relative">
+                        <div class="w-80 h-80 mx-auto rounded-full overflow-hidden  relative">
+                            <img src="{% static 'images/me.jpg' %}" class="w-full h-full object-cover" alt="Team Member 1">
+                            <!-- Overlay -->
+                            <div class="absolute inset-0  bg-opacity-75 flex flex-col items-center justify-center text-white px-4">
+                                <h5 class="text-lg font-bold">Binu Dubey</h5>
+                                <p class="text-sm">Founder & Developer</p>
+                                <p class="mt-2 text-sm">With expertise in full-stack development and a vision for impactful design, Binu combine technical skills with creative thinking to build user-friendly and efficient applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="carousel-item">
+                    <div class="relative">
+                        <div class="w-80 h-80 mx-auto rounded-full overflow-hidden shadow-lg relative">
+                            <img src="{% static 'images/simrant.jpg' %}" class="w-full h-full object-cover" alt="Team Member 2">
+                            <!-- Overlay -->
+                            <div class="absolute inset-0  bg-opacity-75 flex flex-col items-center justify-center text-white px-4">
+                                <h5 class="text-lg font-bold">Simran Tekriwal</h5>
+                                <p class="text-sm">Ui/UX Designer</p>
+                                <p class="mt-2 text-sm">Simran is the  powerhouse behind our platform, bringing innovative solutions to life.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="carousel-item">
+                    <div class="relative">
+                        <div class="w-80 h-80 mx-auto rounded-full overflow-hidden shadow-lg relative">
+                            <img src="{% static 'images/priyanshu.jpg' %}" class="w-full h-full object-cover" alt="Team Member 3">
+                            <!-- Overlay -->
+                            <div class="absolute inset-0  bg-opacity-75 flex flex-col items-center justify-center text-white px-4">
+                                <h5 class="text-lg font-bold">Priyanshu Raj</h5>
+                                <p class="text-sm">Career Advisor</p>
+                                <p class="mt-2 text-sm">Priyanshu specializes in personalized career advice and guidance for students.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="relative">
+                        <div class="w-80 h-80 mx-auto rounded-full overflow-hidden shadow-lg relative">
+                            <img src="{% static 'images/Gaurav.jpg' %}" class="w-full h-full object-cover" alt="Team Member 3">
+                            <!-- Overlay -->
+                            <div class="absolute inset-0  bg-opacity-75 flex flex-col items-center justify-center text-white px-4">
+                                <h5 class="text-lg font-bold">Gaurav Kumar</h5>
+                                <p class="text-sm">Career Advisor</p>
+                                <p class="mt-2 text-sm">Gauurav specializes in personalized career advice and guidance for students.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Carousel Controls -->
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+{% endblock content %}

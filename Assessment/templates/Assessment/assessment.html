@@ -1,0 +1,54 @@
+{% extends 'website/base.html'%}
+{% load static tailwind_tags %}
+{% load static %}
+{% block title %}Assessment{% endblock title %}
+{% block content %}
+
+<main>
+  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 via-purple-500to-pink-500">
+    <div class="max-w-4xl w-full mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div class="bg-white bg-opacity-90 rounded-3xl shadow-2xl overflow-hidden" style="opacity: 1; will-change: opacity, transform; transform: none;">
+            <div class="p-8 sm:p-12">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">Unlock Your Future Career</h1>
+                <p class="text-xl text-gray-600 mb-8">Embark on a journey of self-discovery and career exploration. Our AI-powered assessment will help you uncover your unique strengths, passions, and potential career paths.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+                    <div class="bg-white bg-opacity-50 rounded-xl p-6 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb w-12 h-12 text-purple-600 mb-4">
+                            <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
+                            <path d="M9 18h6"></path>
+                            <path d="M10 22h4"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Discover Your Strengths</h3>
+                        <p class="text-gray-600">Uncover your hidden talents and natural abilities</p></div>
+                        <div class="bg-white bg-opacity-50 rounded-xl p-6 shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass w-12 h-12 text-purple-600 mb-4">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                            </svg>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Explore Career Paths</h3>
+                            <p class="text-gray-600">Navigate through a world of exciting career possibilities</p>
+                        </div>
+                        <div class="bg-white bg-opacity-50 rounded-xl p-6 shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target w-12 h-12 text-purple-600 mb-4">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Set Clear Goals</h3>
+                            <p class="text-gray-600">Define your career objectives with confidence</p></div>
+                        </div>
+                        <div style="display: flex;  width:100%; justify-content: center; align-items: center; padding: 40px 20px; margin: 5px">
+                            <a href="{% url 'psychometric_test' %}" class="login-button font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">Start your assessment</a>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+
+
+{% endblock content %}
+

@@ -1,0 +1,73 @@
+{% extends 'website/base.html'%}
+{% load static tailwind_tags %}
+{% load static %}
+
+
+    
+ {% block content %}
+  
+ <div class="bg-red-500 text-white py-6">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Explore Career Options</h1>
+        <input type="text" id="search" placeholder="Search careers..." oninput="filterOptions()">
+     </div>
+   </div>
+   <div class="container mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+    {% for career in career_options  %}
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden transition-transform hover:scale-105">
+        <a href="{% url 'careerlibrary:career_detail' career.id %}">
+        <img class="w-full h-40 object-cover" src="{{ career.image.url }}" alt="Career Image">
+        <div class="p-4 text-center">
+            <h2 class="text-lg font-bold">{{ career.name }}</h2>
+
+            {{career.name}}
+        </a>
+        </div>
+      </div>
+   
+    {% endfor %}
+  </div>
+    {% endblock content %}
+    
+  
+    {% comment %} <div class="career-detail-card" id="career-detail-card">
+        <div class="career-detail-left">
+          <img id="career-image" src="" alt="Career Image">
+        </div>
+        <div class="career-detail-right">
+          <h2 id="career-title"></h2>
+          <p id="career-description"></p>
+          <div class="highlighted-branches" id="highlighted-branches"></div>
+          <div class="career-details-info">
+            <h3>Job Responsibilities:</h3>
+            <p id="career-responsibilities"></p>
+            <h3>Required Qualifications:</h3>
+            <p id="career-qualifications"></p>
+            <h3>Job Outlook:</h3>
+            <p id="career-outlook"></p>
+            <h3>Average Salary:</h3>
+            <p id="career-salary"></p>
+          </div>
+        </div>
+      </div> {% endcomment %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+    window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) { // Adjust the scroll distance as needed
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+</script>
+<script src="{% static "js/scripts.js" %}"></script>
+

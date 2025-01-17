@@ -1,0 +1,80 @@
+{% extends 'website/base.html' %}
+{% load static tailwind_tags %}
+{% load static %}
+{% block title %}Profile{% endblock title %}
+{% block content %}
+<div class="container mx-auto my-8 p-6">
+    <!-- Profile Section -->
+    <div class="flex flex-col md:flex-row gap-6">
+        <!-- Left Sidebar: Welcome Section -->
+        <div class="w-full md:w-1/4 bg-blue-100 rounded-lg shadow-lg p-6">
+            <div class="text-center">
+                <!-- Profile Picture (if available) -->
+                <img src="{% static 'images/char.png' %}" alt="" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h5 class="text-xl font-semibold text-gray-800">Welcome, <span class="text-capitalize">{{ request.user.username }}</span></h5>
+                <hr class="my-4">
+            </div>
+            <!-- Sidebar Links -->
+            <ul class="space-y-2">
+                <li><a href="#" class="text-blue-600 hover:text-blue-800">My pathbook</a></li>
+                <li><a href="{%  url 'assessment_complete'%}" class="text-blue-600 hover:text-blue-800">My Career</a></li>
+                <!-- Add more links as necessary -->
+            </ul>
+        </div>
+
+        <!-- Right Content: View Scores -->
+        <div class="w-full md:w-3/4 bg-white shadow-lg rounded-lg p-6">
+            <h4 class="text-2xl font-semibold mb-4">View Your Scores</h4>
+            <div>
+                <!-- Psychometric Scores -->
+                <div class="bg-white shadow-lg rounded-lg p-6 mb-6">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Psychometric Scores</h2>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between text-gray-700"><strong>O Score:</strong> {{ profile.o_score }}</li>
+                        <li class="flex justify-between text-gray-700"><strong>C Score:</strong> {{ profile.c_score }}</li>
+                        <li class="flex justify-between text-gray-700"><strong>E Score:</strong> {{ profile.e_score }}</li>
+                        <li class="flex justify-between text-gray-700"><strong>A Score:</strong> {{ profile.a_score }}</li>
+                        <li class="flex justify-between text-gray-700"><strong>N Score:</strong> {{ profile.n_score }}</li>
+                    </ul>
+                </div>
+
+                <!-- Aptitude Scores -->
+                <div class="bg-white shadow-lg rounded-lg p-6 mb-6">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Aptitude Scores</h2>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between text-gray-700"><strong>Numerical Ability:</strong> {{ profile.numerical_ability }}</li>
+                    </ul>
+                </div>
+
+                <!-- Reasoning Scores -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Reasoning Scores</h2>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between text-gray-700"><strong>Verbal Reasoning:</strong> {{ profile.verbal_reasoning }}</li>
+                        <li class="flex justify-between text-gray-700"><strong>Logical Reasoning:</strong> {{ profile.logical_reasoning }}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="flex justify-center mt-6">
+                <form method="POST" action="{% url 'logout' %}" class="w-full max-w-xs">
+                    {% csrf_token %}
+                    <button type="submit" class="w-full px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+                        Logout
+                    </button>
+                </form>
+            </div>
+            <div class="flex justify-center mt-6">
+                <form method="POST" action="{% url 'passwordchange' %}" class="w-full max-w-xs">
+                    {% csrf_token %}
+                    <button type="submit" class="w-full px-4 py-2 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+                        change your password
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
