@@ -3,91 +3,375 @@
 <body>
 <!-- Main Content -->
 {% block hero %}
+<!-- HERO SECTION -->
+<section class="w-full">
+  <div class="swiper mySwiper h-full">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div
+        class="swiper-slide flex items-center justify-center px-6 md:px-24 py-12 h-full"
+        style="background-image: url('{% static "images/redPaper.jpg" %}') ;background-size: cover; background-position: center;"
+      >
+        <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-8">
+          <!-- Left Content -->
+          <div class="text-white max-w-xl md:w-1/2 text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+              <span class="text-blue-500">Empowering Your</span>
+              <span class="text-green-400">Career</span>
+            </h1>
+            <p class="text-lg md:text-xl font-medium mb-6 text-black">
+              Tailored Career Insights for Every Step Forward
+            </p>
+            <a
+              href="#"
+              class="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition"
+            >
+              Get Started
+            </a>
+          </div>
 
-<div >
-    <div class="desc mb-15" style="height: 80vh; width: 96vw; background-image: url('{% static "images/red-paper.jpg" %}'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; margin: 20px; overflow-x:hidden;">
-     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="3000">
-       <!-- Indicators -->
-       <ol class="carousel-indicators">
-         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-         <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-         <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-       </ol>
-   
-       <!-- Wrapper for slides -->
-       <div class="carousel-inner">
-         <!-- Slide 1 -->
-         <div class="carousel-item active">
-           <div class="carousel-content" >
-             <div class="content-left"style="overflow: hidden;width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center;">
-               <h1 class="textImage">
-                 <span style="color:#007bff">Empowering</span> Your 
-                 <div class="scroller" style="overflow-x:hidden;">
-                   <span>Career<br/>Future<br/></span>
-                  
-                 </div>
-               </h1>
-               <p>Tailored Career Insights for Every Step Forward</p>
-             </div>
-             <img src="{% static 'images/youngBoy.png' %}" class="d-block mx-auto img-fluid" alt="Slide 1 Image">
-             <div class="carousel-caption"></div>
-           </div>
-         </div>
-   
-         <!-- Slide 2 -->
-         <div class="carousel-item">
-           <div class="carousel-content">
-             <div class="content-left"style="overflow: hidden; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center;">
-               <h1>
-                 <span style="color:#007bff">Empowering</span> Your 
-                 <div class="scroller">
-                   <span>Career<br/>Future<br/></span>
-                  
-                 </div>
-               </h1>
-               <p>Tailored Career Insights for Every Step Forward</p>
-             </div>
+          <!-- Right Image -->
+          <div class="md:w-1/2 flex justify-center">
+            <img
+              src="{% static 'images/girlTwo.png' %}"
+              alt="Graduate"
+              class="w-[300px] md:w-[400px] h-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="swiper-slide flex items-center justify-center px-6 md:px-24 py-12 h-full"
+        style="background-image: url('{% static "images/redPaper.jpg" %}'); background-size: cover; background-position: center;"
+      >
+        <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-8">
+          <!-- Left Content -->
+          <div class="text-white max-w-xl md:w-1/2 text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+              <span class="text-blue-500">Empowering Your</span>
+              <span class="text-green-400">Career</span>
+            </h1>
+            <p class="text-lg md:text-xl font-medium mb-6 text-black">
+              Tailored Career Insights for Every Step Forward
+            </p>
+            <a
+              href="#"
+              class="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition"
+            >
+              Get Started
+            </a>
+          </div>
 
-             <img src="{% static 'images/girlTwo.png' %}" class="d-block mx-auto img-fluid" alt="Slide 2 Image">
-             <div class="carousel-caption"></div>
-           </div>
-         </div>
-   
-         <!-- Slide 3 -->
-         <div class="carousel-item">
-           <div class="carousel-content">
-             <div class="content-left"style="overflow: hidden;width: 100%; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center;">
-               <h1>
-                 <span style="color:#007bff">Empowering</span> Your 
-                 <div class="scroller">
-                   <span>Career<br/>Future<br/></span>
-                   
-                 </div>
-               </h1>
-               <p>Tailored Career Insights for Every Step Forward</p>
-             </div>
-             
-             <img src="{% static 'images/girlOne.png' %}" class="d-block mx-auto img-fluid" alt="Slide 3 Image">
-             
-           </div>
-         </div>
-       </div>
-   
-       <!-- Controls -->
-       <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-         <span class="sr-only">Previous</span>
-       </a>
-       <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-         <span class="sr-only">Next</span>
-       </a>
-     </div>
-   </div> 
+          <!-- Right Image -->
+          <div class="md:w-1/2 flex justify-center">
+            <img
+              src="{% static 'images/youngBoy.png' %}"
+              alt="Graduate"
+              class="w-[300px] md:w-[400px] h-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="swiper-slide flex items-center justify-center px-6 md:px-24 py-12 h-full"
+        style="background-image: url('{% static "images/redPaper.jpg" %}'); background-size: cover; background-position: center;"
+      >
+        <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-8">
+          <!-- Left Content -->
+          <div class="text-white max-w-xl md:w-1/2 text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+              <span class="text-blue-500">Empowering Your</span>
+              <span class="text-green-400">Career</span>
+            </h1>
+            <p class="text-lg md:text-xl font-medium mb-6 text-black">
+              Tailored Career Insights for Every Step Forward
+            </p>
+            <a
+              href="#"
+              class="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition"
+            >
+              Get Started
+            </a>
+          </div>
+
+          <!-- Right Image -->
+          <div class="md:w-1/2 flex justify-center">
+            <img
+              src="{% static 'images/girlOne.png' %}"
+              alt="Graduate"
+              class="w-[300px] md:w-[400px] h-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- SwiperJS Script -->
+
+
+
 {% endblock hero %}
 <!-- decsc Content -->
 {% block content %}
-<section id="detect-deepfakes" style="display: flex;  width:100%; justify-content: center; align-items: center; padding: 40px 20px; margin: 5px">
+
+<section class="p-6 bg-gray-50">
+  <!-- <div class="text-xs text-gray-500 mb-2">Home / Career</div> -->
+  <h1 class="text-2xl font-bold mb-1">Your Path to success with<span class="text-primary">AI-Driven</span> Career Guidance</h1>
+  <p class="text-sm text-gray-600 mb-4">"Unlock Your Future: Explore, Discover, and Shape Your Ideal Career with AI-Powered Insights"</p>
+  
+  <!-- <div class="relative mb-4">
+      <input type="text" placeholder="Search career counselors..." class="w-full p-3 pr-12 border rounded-md text-sm">
+      <button class="absolute right-0 top-0 bg-primary text-white h-full px-3 rounded-r-md">
+          <i class="fas fa-search"></i>
+      </button>
+  </div>
+   -->
+   <button href="{% url 'psychometric_test' %}" class="bg-blue-600 p-2 my-2 text-white font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">Start your Journey Now</button>
+  
+
+</section>
+
+<!-- Certified Counselors Section -->
+
+
+<!-- Explore Career Options Section -->
+<section class="p-6 relative">
+  <div class="mb-6 items-center justify-center">
+      <h2 class="text-xl font-bold mb-1">Explore Your Career Options with CareerL Library</h2>
+      <p class="text-primary font-medium">Strategically</p>
+  </div>
+  <div class="relative mb-4">
+    <input type="text" placeholder="Search career ..." class="w-2/3 p-3 pr-12 border rounded-md text-sm">
+    <button class="absolute  top-0 bg-primary text-white h-full px-3 rounded-r-md">
+        <i class="fas fa-search"></i>
+    </button>
+</div>
+  <div class="flex justify-between items-center mb-4">
+      <!-- <button class="border border-gray-300 rounded px-3 py-1 text-xs"></button> -->
+      <button class="bg-primary text-white rounded px-3 py-1 text-xs">Explore Careers</button>
+  </div>
+  <div class="flex justify-between items-center text-xs text-gray-500">
+    <span>Popular: Engineering, Civil Service</span>
+    <button class="text-primary">
+        <i class="fas fa-sliders-h"></i>
+    </button>
+</div>
+  <div class="absolute right-4 bottom-0 w-52 h-52">
+      <div class="relative w-full h-full">
+          <div class="absolute inset-0 bg-yellow-400 rounded-full"></div>
+          <img src="{% static 'images/girlOne.png' %}" alt="Career Guidance" class="absolute bottom-0 right-0 w-48 h-48 object-cover">
+          <div class="absolute top-0 right-4 w-12 h-12 bg-blue-500 rounded-full"></div>
+          <div class="absolute top-4 left-0 w-10 h-10 bg-red-500 rounded-full"></div>
+      </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="p-6">
+  <h2 class="text-xl font-bold text-center mb-6">End to end career development services</h2>
+  
+  <div class="grid grid-cols-2 gap-4">
+      <!-- Service 1 -->
+      <div class="relative border rounded-lg overflow-hidden h-32">
+          <div class="p-3">
+              <h3 class="font-medium text-sm mb-1">Career Exploration & Planning</h3>
+              <p class="text-[10px] text-gray-600 mb-2">Discover your ideal career path with expert guidance</p>
+              <button class="bg-primary text-white rounded px-2 py-1 text-[10px]">Explore</button>
+          </div>
+          <div class="absolute bottom-0 right-0 w-16 h-16 bg-primary/20 rounded-tl-full flex items-center justify-center">
+              <div class="w-8 h-8 bg-primary/30 rounded-full flex items-center justify-center">
+                  <i class="fas fa-compass text-primary text-xs"></i>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Service 2 -->
+      <div class="relative border rounded-lg overflow-hidden h-32">
+          <div class="p-3">
+              <h3 class="font-medium text-sm mb-1">Psychological Counseling</h3>
+              <p class="text-[10px] text-gray-600 mb-2">Professional support for mental well-being</p>
+              <button class="bg-primary text-white rounded px-2 py-1 text-[10px]">Details</button>
+          </div>
+          <div class="absolute bottom-0 right-0 w-16 h-16 bg-primary/20 rounded-tl-full flex items-center justify-center">
+              <div class="w-8 h-8 bg-primary/30 rounded-full flex items-center justify-center">
+                  <i class="fas fa-brain text-primary text-xs"></i>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Service 3 -->
+      <div class="relative border rounded-lg overflow-hidden h-32">
+          <div class="p-3">
+              <h3 class="font-medium text-sm mb-1">Professional CV Writing</h3>
+              <p class="text-[10px] text-gray-600 mb-2">Stand out with expertly crafted resumes</p>
+              <button class="bg-primary text-white rounded px-2 py-1 text-[10px]">Details</button>
+          </div>
+          <div class="absolute bottom-0 right-0 w-16 h-16 bg-primary/20 rounded-tl-full flex items-center justify-center">
+              <div class="w-8 h-8 bg-primary/30 rounded-full flex items-center justify-center">
+                  <i class="fas fa-file-alt text-primary text-xs"></i>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Service 4 -->
+      <div class="relative border rounded-lg overflow-hidden h-32">
+          <div class="p-3">
+              <h3 class="font-medium text-sm mb-1">Interview Coaching</h3>
+              <p class="text-[10px] text-gray-600 mb-2">Prepare to impress with interview training</p>
+              <button class="bg-primary text-white rounded px-2 py-1 text-[10px]">Details</button>
+          </div>
+          <div class="absolute bottom-0 right-0 w-16 h-16 bg-primary/20 rounded-tl-full flex items-center justify-center">
+              <div class="w-8 h-8 bg-primary/30 rounded-full flex items-center justify-center">
+                  <i class="fas fa-comments text-primary text-xs"></i>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Service 5 -->
+      <div class="relative border rounded-lg overflow-hidden h-32">
+          <div class="p-3">
+              <h3 class="font-medium text-sm mb-1">University Placements</h3>
+              <p class="text-[10px] text-gray-600 mb-2">Get into your dream university with our help</p>
+              <button class="bg-primary text-white rounded px-2 py-1 text-[10px]">Details</button>
+          </div>
+          <div class="absolute bottom-0 right-0 w-16 h-16 bg-primary/20 rounded-tl-full flex items-center justify-center">
+              <div class="w-8 h-8 bg-primary/30 rounded-full flex items-center justify-center">
+                  <i class="fas fa-graduation-cap text-primary text-xs"></i>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Service 6 -->
+      <div class="relative border rounded-lg overflow-hidden h-32">
+          <div class="p-3">
+              <h3 class="font-medium text-sm mb-1">Reference & Job Assistance</h3>
+              <p class="text-[10px] text-gray-600 mb-2">Get connected to opportunities in your field</p>
+              <button class="bg-primary text-white rounded px-2 py-1 text-[10px]">Details</button>
+          </div>
+          <div class="absolute bottom-0 right-0 w-16 h-16 bg-primary/20 rounded-tl-full flex items-center justify-center">
+              <div class="w-8 h-8 bg-primary/30 rounded-full flex items-center justify-center">
+                  <i class="fas fa-briefcase text-primary text-xs"></i>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="p-6">
+<div class="flex justify-between items-center mb-4">
+    <div>
+        <div class="text-xs text-primary font-medium mb-1">MEET OUR TEAM</div>
+        <h2 class="text-xl font-bold">Loratis <br>Certified Career Navigators</h2>
+    </div>
+    <div class="text-xs text-gray-500 max-w-[120px]">
+        Certified career counselors with expertise in various domains
+    </div>
+</div>
+
+<div class="grid grid-cols-3 gap-3">
+    <!-- Counselor 1 -->
+    <div class="border rounded-lg overflow-hidden">
+        <div class="bg-[#ffeeee] p-2">
+            <img src="/placeholder.svg?height=80&width=80" alt="Counselor" class="w-full h-24 object-cover rounded">
+        </div>
+        <div class="p-2">
+            <h3 class="font-medium text-xs">Dr. Rahul Sharma</h3>
+            <p class="text-[10px] text-gray-500">Career Expert</p>
+            <div class="flex items-center mt-1">
+                <div class="text-yellow-500 text-[10px]">★★★★★</div>
+                <span class="text-[10px] ml-1">5.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Counselor 2 -->
+    <div class="border rounded-lg overflow-hidden">
+        <div class="bg-[#fff0f5] p-2">
+            <img src="/placeholder.svg?height=80&width=80" alt="Counselor" class="w-full h-24 object-cover rounded">
+        </div>
+        <div class="p-2">
+            <h3 class="font-medium text-xs">Priya Patel</h3>
+            <p class="text-[10px] text-gray-500">Education Advisor</p>
+            <div class="flex items-center mt-1">
+                <div class="text-yellow-500 text-[10px]">★★★★★</div>
+                <span class="text-[10px] ml-1">4.9</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Counselor 3 -->
+    <div class="border rounded-lg overflow-hidden">
+        <div class="bg-[#f0f8ff] p-2">
+            <img src="/placeholder.svg?height=80&width=80" alt="Counselor" class="w-full h-24 object-cover rounded">
+        </div>
+        <div class="p-2">
+            <h3 class="font-medium text-xs">Amit Kumar</h3>
+            <p class="text-[10px] text-gray-500">Career Coach</p>
+            <div class="flex items-center mt-1">
+                <div class="text-yellow-500 text-[10px]">★★★★★</div>
+                <span class="text-[10px] ml-1">4.8</span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- Scientific Approach Section -->
+<section class="p-6">
+  <h2 class="text-xl font-bold text-center mb-1">Career Guidance with a Scientific Approach</h2>
+  <p class="text-center text-sm text-gray-600 mb-6">Based on research and proven methodologies</p>
+  
+  <div class="grid grid-cols-3 gap-4">
+      <!-- Approach 1 -->
+      <div class="border rounded-lg p-3">
+          <div class="flex justify-center mb-2">
+              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-chart-line text-primary"></i>
+              </div>
+          </div>
+          <h3 class="text-center font-medium text-xs mb-1">Professional Testing</h3>
+          <p class="text-[10px] text-gray-600 text-center">Comprehensive assessments to identify strengths, interests, and aptitudes for informed career decisions.</p>
+      </div>
+      
+      <!-- Approach 2 -->
+      <div class="border rounded-lg p-3">
+          <div class="flex justify-center mb-2">
+              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-users text-primary"></i>
+              </div>
+          </div>
+          <h3 class="text-center font-medium text-xs mb-1">World-class Career Team</h3>
+          <p class="text-[10px] text-gray-600 text-center">Expert counselors with specialized knowledge in various industries and educational pathways.</p>
+      </div>
+      
+      <!-- Approach 3 -->
+      <div class="border rounded-lg p-3">
+          <div class="flex justify-center mb-2">
+              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-laptop text-primary"></i>
+              </div>
+          </div>
+          <h3 class="text-center font-medium text-xs mb-1">Application-Centric Focus</h3>
+          <p class="text-[10px] text-gray-600 text-center">Practical guidance on applications, interviews, and admissions to maximize success rates.</p>
+      </div>
+  </div>
+</section>
+
+<!-- Call Back Section -->
+<section class="p-6">
+  <h2 class="text-xl font-bold text-center mb-6">Get a Call Back</h2>
+  
+  <div class="grid grid-cols-3 gap-3 mb-4">
+      <input type="text" placeholder="Your Name" class="border rounded p-2 text-sm">
+      <input type="tel" placeholder="Phone Number" class="border rounded p-2 text-sm">
+      <input type="email" placeholder="Email Address" class="border rounded p-2 text-sm">
+  </div>
+  
+  <button class="w-full bg-primary text-white py-2 rounded-md font-medium">Submit</button>
+</section>
+
+{% comment %} <section id="detect-deepfakes" style="display: flex;  width:100%; justify-content: center; align-items: center; padding: 40px 20px; margin: 5px">
     
     <h2 style="overflow: hidden;">Shaping the Career Guidance Landscape</h2>
         <h3 style="overflow: hidden;">Comprehensive career guidance solutions for secondary students</h3>
@@ -180,6 +464,7 @@
   <h3 style="color:rgb(36, 37, 37);">"Unlock Your Future: <span style="font-size: 1.5rem; font-weight: bold; color:rgb(36, 37, 37);  letter-spacing: 1px; transition: color 0.3s ease;">Explore, Discover, and Shape Your Ideal Career with AI-Powered Insights"</span></h3>
   <a href="{% url 'psychometric_test' %}" class="login-button font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">Start your assessment</a>
 </div>
+</section> {% endcomment %}
         
 {% endblock content %}
 <!-- Footer -->

@@ -2,9 +2,20 @@ from django.db import models
 
 # Create your models here.
 class CareerOption(models.Model):
+    STREAM_CHOICES = [
+        ('Science', 'Science'),
+        ('Commerce', 'Commerce'),
+        ('Arts', 'Arts'),
+        ('Any','Any')
+    ]
     name = models.CharField(max_length=200)
     image = models.ImageField(upload_to='career_images/')
     description = models.TextField()
+    stream_type = models.CharField(
+    max_length=50,
+    choices=STREAM_CHOICES,
+    default='Science'  # or any default you'd like
+)
 
     def __str__(self):
         return self.name

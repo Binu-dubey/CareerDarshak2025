@@ -39,6 +39,8 @@ class Question(models.Model):
     def __str__(self):
         return f"{self.question_text} ({self.subcategory})"
 
+
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     # Psychometric scores
@@ -47,9 +49,13 @@ class UserProfile(models.Model):
     e_score = models.FloatField(default=0)
     a_score = models.FloatField(default=0)
     n_score = models.FloatField(default=0)
+   
+    
+
     # Aptitude scores
     numerical_ability = models.FloatField(default=0)
    
     # Reasoning scores
     verbal_reasoning = models.FloatField(default=0)
     logical_reasoning = models.FloatField(default=0)
+

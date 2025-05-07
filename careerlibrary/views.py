@@ -1,9 +1,17 @@
 from django.shortcuts import render, get_object_or_404
 from .models import CareerOption,Branch
+from collections import defaultdict
 # Create your views here.
 def library(request):
     career_options = CareerOption.objects.all()
-    return render(request, 'careerlibrary/library.html', {'career_options': career_options})
+    stream_groups = defaultdict(list)
+
+    for career in career_options:
+        stream_groups[career.stream_type].append(career)
+
+    return render(request, 'careerlibrary/library.html', {
+        'stream_groups': dict(stream_groups)
+    })
  
 def career_detail(request, career_id):
     career_option = get_object_or_404(CareerOption, pk=career_id)
