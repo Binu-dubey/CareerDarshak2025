@@ -1,0 +1,526 @@
+{% extends 'website/base.html' %}
+{% load static tailwind_tags %}
+{% load static %}
+{% block title %}Profile{% endblock title %}
+{% block content %}
+<body class="bg-gray-50 font-sans text-gray-800 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white">
+    <div class="container mx-auto flex h-16 items-center justify-between py-4 px-4">
+        <div class="flex items-center gap-10">
+        <div class="flex items-center gap-6 md:gap-10">
+        <a href="index.html" class="text-sm font-medium transition-colors hover:text-blue-600">
+            Dashboard
+          </a>
+        
+        <button class="md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </svg>
+          <span class="sr-only">Toggle menu</span>
+        </button>
+      </div>
+        <div class="relative">
+          <button id="user-menu-button" class="relative h-8 w-8 rounded-full">
+            <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
+              <span class="text-blue-700 font-medium">RS</span>
+            </div>
+          </button>
+          <div id="user-menu" class="hidden absolute right-0 mt-2 w-56 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <div class="py-1">
+              <div class="px-4 py-2 font-normal">
+                <p class="text-sm font-medium leading-none">Rahul Sharma</p>
+                <p class="text-xs leading-none text-gray-500 mt-1">rahul.sharma@example.com</p>
+              </div>
+              <hr>
+              <a href="{% url 'userprofile' request.user.username %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Help & Support</a>
+              <hr>
+              
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      <!-- Main Nav -->
+        <button class="relative">
+          <i class="fa-regular fa-bell h-5 w-5"></i>
+          <span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500"></span>
+          <span class="sr-only">Notifications</span>
+        </button>
+      
+
+      <!-- User Nav -->
+      
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 bg-gray-50">
+    <div class="container mx-auto py-6 px-4">
+      <!-- Dashboard Header -->
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+          <div>
+            <h1 class="text-2xl font-bold">Welcome back, Rahul!</h1>
+            <p class="text-gray-500">Continue your career discovery journey</p>
+          </div>
+          <div class="mt-4 md:mt-0">
+            <a href="assessment.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Continue Assessment</a>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <div class="flex justify-between items-center mb-2">
+            <div class="flex items-center gap-2">
+              <span class="font-medium">Overall Progress</span>
+              <span class="text-sm text-gray-500">(4/6 Levels Completed)</span>
+            </div>
+            <span class="text-sm font-medium">67%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-blue-600 h-2 rounded-full" style="width: 67%"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-4 mt-6">
+          <div class="p-3 rounded-lg border bg-blue-50 border-blue-200 text-center">
+            <div class="text-xs font-medium mb-1 text-blue-600">Level 1</div>
+            <div class="text-sm font-medium text-blue-700">Personality</div>
+            <div class="text-xs mt-1 text-blue-600">Completed</div>
+          </div>
+          <div class="p-3 rounded-lg border bg-blue-50 border-blue-200 text-center">
+            <div class="text-xs font-medium mb-1 text-blue-600">Level 2</div>
+            <div class="text-sm font-medium text-blue-700">Aptitude</div>
+            <div class="text-xs mt-1 text-blue-600">Completed</div>
+          </div>
+          <div class="p-3 rounded-lg border bg-blue-50 border-blue-200 text-center">
+            <div class="text-xs font-medium mb-1 text-blue-600">Level 3</div>
+            <div class="text-sm font-medium text-blue-700">Specialization</div>
+            <div class="text-xs mt-1 text-blue-600">Completed</div>
+          </div>
+          <div class="p-3 rounded-lg border bg-blue-50 border-blue-200 text-center">
+            <div class="text-xs font-medium mb-1 text-blue-600">Level 4</div>
+            <div class="text-sm font-medium text-blue-700">Lifestyle</div>
+            <div class="text-xs mt-1 text-blue-600">Completed</div>
+          </div>
+          <div class="p-3 rounded-lg border bg-gray-50 border-gray-200 text-center">
+            <div class="text-xs font-medium mb-1 text-gray-500">Level 5</div>
+            <div class="text-sm font-medium text-gray-700">Career Paths</div>
+            <div class="text-xs mt-1 text-gray-500">Pending</div>
+          </div>
+          <div class="p-3 rounded-lg border bg-gray-50 border-gray-200 text-center">
+            <div class="text-xs font-medium mb-1 text-gray-500">Level 6</div>
+            <div class="text-sm font-medium text-gray-700">Roadmap</div>
+            <div class="text-xs mt-1 text-gray-500">Pending</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <div class="md:col-span-2 space-y-6">
+          <!-- Assessment Progress -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="pb-2">
+              <h2 class="text-lg font-bold">Assessment Progress</h2>
+              <p class="text-sm text-gray-500">Track your journey through the 6-level assessment</p>
+            </div>
+            <div class="mt-4">
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between mb-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <div class="h-4 w-4 rounded-full bg-green-500"></div>
+                      <span>Level 1: Personality Assessment</span>
+                    </div>
+                    <span>100%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <div class="h-4 w-4 rounded-full bg-green-500"></div>
+                      <span>Level 2: Academic Aptitude + RIASEC</span>
+                    </div>
+                    <span>100%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <div class="h-4 w-4 rounded-full bg-green-500"></div>
+                      <span>Level 3: Stream Specialization</span>
+                    </div>
+                    <span>100%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <div class="h-4 w-4 rounded-full bg-green-500"></div>
+                      <span>Level 4: Lifestyle & Hobbies</span>
+                    </div>
+                    <span>100%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <div class="h-4 w-4 rounded-full bg-blue-500"></div>
+                      <span>Level 5: Career Path Generation</span>
+                    </div>
+                    <span>40%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-500 h-2 rounded-full" style="width: 40%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <div class="h-4 w-4 rounded-full bg-gray-300"></div>
+                      <span>Level 6: Final Roadmap</span>
+                    </div>
+                    <span>0%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-gray-300 h-2 rounded-full" style="width: 0%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Current Assessment -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="pb-2">
+              <h2 class="text-lg font-bold">Continue Your Assessment</h2>
+              <p class="text-sm text-gray-500">Level 5: Career Path Generation</p>
+            </div>
+            <div class="mt-4">
+              <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                    <span class="text-lg font-bold">5</span>
+                  </div>
+                  <div>
+                    <h3 class="font-medium">Career Path Generation</h3>
+                    <p class="text-sm text-gray-500">8 of 20 questions completed</p>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="flex justify-between text-xs mb-1">
+                    <span>Progress</span>
+                    <span>40%</span>
+                  </div>
+                  <div class="w-full bg-blue-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 40%"></div>
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600">
+                  In this level, we'll analyze your preferences and skills to identify the most suitable career paths for you.
+                </p>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <div>
+                  <div class="text-sm font-medium">Estimated time to complete:</div>
+                  <div class="text-sm text-gray-500">15-20 minutes</div>
+                </div>
+                <a href="assessment.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center gap-2">
+                  Continue
+                  <i class="fa-solid fa-chevron-right text-xs"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Career Insights -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="pb-2">
+              <h2 class="text-lg font-bold">Preliminary Career Insights</h2>
+              <p class="text-sm text-gray-500">Based on your completed assessments</p>
+            </div>
+            <div class="mt-4">
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
+                    92%
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-sm font-medium">Data Scientist</div>
+                    <div class="w-full bg-gray-200 rounded-full h-1.5 mt-1">
+                      <div class="bg-blue-600 h-1.5 rounded-full" style="width: 92%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
+                    89%
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-sm font-medium">Software Developer</div>
+                    <div class="w-full bg-gray-200 rounded-full h-1.5 mt-1">
+                      <div class="bg-blue-500 h-1.5 rounded-full" style="width: 89%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-full bg-blue-400 flex items-center justify-center text-white font-bold">
+                    87%
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-sm font-medium">AI Researcher</div>
+                    <div class="w-full bg-gray-200 rounded-full h-1.5 mt-1">
+                      <div class="bg-blue-400 h-1.5 rounded-full" style="width: 87%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-full bg-blue-300 flex items-center justify-center text-white font-bold">
+                    82%
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-sm font-medium">Data Analyst</div>
+                    <div class="w-full bg-gray-200 rounded-full h-1.5 mt-1">
+                      <div class="bg-blue-300 h-1.5 rounded-full" style="width: 82%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-full bg-gray-400 flex items-center justify-center text-white font-bold">
+                    68%
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-sm font-medium">UX Designer</div>
+                    <div class="w-full bg-gray-200 rounded-full h-1.5 mt-1">
+                      <div class="bg-gray-400 h-1.5 rounded-full" style="width: 68%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 flex justify-end">
+                <a href="{% url 'fullresult' %}" class="border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-md flex items-center gap-2">
+                  View Full Results
+                  <i class="fa-solid fa-chevron-right text-xs"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Assessment Levels -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="pb-2">
+              <h2 class="text-lg font-bold">Assessment Levels</h2>
+              <p class="text-sm text-gray-500">Your 6-level assessment journey</p>
+            </div>
+            <div class="mt-4">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between p-3 rounded-lg border bg-green-50 border-green-200">
+                  <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-circle-check text-green-500"></i>
+                    <div>
+                      <div class="text-sm font-medium">Level 1</div>
+                      <div class="text-xs text-gray-500">Personality Assessment</div>
+                    </div>
+                  </div>
+                  <a href="#" class="text-sm px-3 py-1 text-gray-700 hover:bg-green-100 rounded-md">
+                    Review
+                  </a>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-lg border bg-green-50 border-green-200">
+                  <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-circle-check text-green-500"></i>
+                    <div>
+                      <div class="text-sm font-medium">Level 2</div>
+                      <div class="text-xs text-gray-500">Academic Aptitude + RIASEC</div>
+                    </div>
+                  </div>
+                  <a href="#" class="text-sm px-3 py-1 text-gray-700 hover:bg-green-100 rounded-md">
+                    Review
+                  </a>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-lg border bg-green-50 border-green-200">
+                  <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-circle-check text-green-500"></i>
+                    <div>
+                      <div class="text-sm font-medium">Level 3</div>
+                      <div class="text-xs text-gray-500">Stream Specialization</div>
+                    </div>
+                  </div>
+                  <a href="#" class="text-sm px-3 py-1 text-gray-700 hover:bg-green-100 rounded-md">
+                    Review
+                  </a>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-lg border bg-green-50 border-green-200">
+                  <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-circle-check text-green-500"></i>
+                    <div>
+                      <div class="text-sm font-medium">Level 4</div>
+                      <div class="text-xs text-gray-500">Lifestyle & Hobbies</div>
+                    </div>
+                  </div>
+                  <a href="#" class="text-sm px-3 py-1 text-gray-700 hover:bg-green-100 rounded-md">
+                    Review
+                  </a>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-lg border bg-blue-50 border-blue-200">
+                  <div class="flex items-center gap-3">
+                    <i class="fa-regular fa-clock text-blue-500"></i>
+                    <div>
+                      <div class="text-sm font-medium">Level 5</div>
+                      <div class="text-xs text-gray-500">Career Path Generation</div>
+                    </div>
+                  </div>
+                  <a href="assessment.html" class="text-sm px-3 py-1 text-gray-700 hover:bg-blue-100 rounded-md">
+                    Continue
+                  </a>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-lg border bg-gray-50 border-gray-200">
+                  <div class="flex items-center gap-3">
+                    <i class="fa-regular fa-circle text-gray-300"></i>
+                    <div>
+                      <div class="text-sm font-medium">Level 6</div>
+                      <div class="text-xs text-gray-500">Final Roadmap</div>
+                    </div>
+                  </div>
+                  <span class="text-sm px-3 py-1 text-gray-400 rounded-md">
+                    Locked
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="pb-2">
+              <h2 class="text-lg font-bold">Recent Activity</h2>
+              <p class="text-sm text-gray-500">Your latest actions and achievements</p>
+            </div>
+            <div class="mt-4">
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-lg">
+                    🎯
+                  </div>
+                  <div>
+                    <div class="text-sm font-medium">Completed Level 4 Assessment</div>
+                    <div class="text-xs text-gray-500">Today, 10:30 AM</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-lg">
+                    🏆
+                  </div>
+                  <div>
+                    <div class="text-sm font-medium">Unlocked 'The Innovator' Avatar</div>
+                    <div class="text-xs text-gray-500">Today, 9:45 AM</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-lg">
+                    🚀
+                  </div>
+                  <div>
+                    <div class="text-sm font-medium">Started Level 5 Assessment</div>
+                    <div class="text-xs text-gray-500">Today, 9:15 AM</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-lg">
+                    🎖️
+                  </div>
+                  <div>
+                    <div class="text-sm font-medium">Earned 'Quick Learner' Badge</div>
+                    <div class="text-xs text-gray-500">Yesterday, 3:20 PM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Tasks -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="pb-2">
+              <h2 class="text-lg font-bold">Upcoming Tasks</h2>
+              <p class="text-sm text-gray-500">Your next steps in the journey</p>
+            </div>
+            <div class="mt-4">
+              <div class="space-y-4">
+                <div class="p-3 rounded-lg border border-red-200 bg-red-50">
+                  <div class="flex justify-between">
+                    <h4 class="text-sm font-medium">Complete Career Path Assessment</h4>
+                    <button class="h-6 w-6 text-gray-500 hover:text-gray-700">
+                      <i class="fa-regular fa-circle-check"></i>
+                    </button>
+                  </div>
+                  <p class="text-xs text-gray-600 mt-1">Finish the remaining questions in Level 5</p>
+                </div>
+                <div class="p-3 rounded-lg border border-yellow-200 bg-yellow-50">
+                  <div class="flex justify-between">
+                    <h4 class="text-sm font-medium">Review Personality Results</h4>
+                    <button class="h-6 w-6 text-gray-500 hover:text-gray-700">
+                      <i class="fa-regular fa-circle-check"></i>
+                    </button>
+                  </div>
+                  <p class="text-xs text-gray-600 mt-1">Check your personality traits analysis</p>
+                </div>
+                <div class="p-3 rounded-lg border border-yellow-200 bg-yellow-50">
+                  <div class="flex justify-between">
+                    <h4 class="text-sm font-medium">Explore Recommended Resources</h4>
+                    <button class="h-6 w-6 text-gray-500 hover:text-gray-700">
+                      <i class="fa-regular fa-circle-check"></i>
+                    </button>
+                  </div>
+                  <p class="text-xs text-gray-600 mt-1">Review learning materials for top career matches</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t py-4 bg-white">
+    <div class="container mx-auto flex flex-col items-center justify-between gap-4 md:flex-row px-4">
+      <p class="text-center text-sm text-gray-500">&copy; 2025 CareerDarshak. All rights reserved.</p>
+      <p class="text-center text-sm text-gray-500">AI-Powered Career Assessment Platform</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle user menu
+    document.getElementById('user-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('user-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('user-menu');
+      const button = document.getElementById('user-menu-button');
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+  </script>
+{% endblock content %}

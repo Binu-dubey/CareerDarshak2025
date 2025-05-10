@@ -28,7 +28,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', views.home, name='home'),
     path('careerlibrary/', include('careerlibrary.urls')),
-    path('about/',views.about,name='about'),
+    path('dashboard/',views.dashboard,name='dashboard'),
+    path('fullresult/',views.fullresult,name='fullresult'),
     path('contact/',views.contact,name='contact'),
     path('privacy/',views.privacy,name='privacy'),
     path('condition/',views.condition,name='condition'),
@@ -47,6 +48,8 @@ urlpatterns = [
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view (template_name ='website/password_reset_complete.html'), name='password_reset_complete'),
     path('Assessment/', include('Assessment.urls')),
     
+
+    path('level1/', include('level1.urls')),
 
     path("__reload__/",include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,211 @@
+[
+    {
+      "level": 1,
+      "question_number": 1,
+      "question_text": "How would you rate your ability to learn new skills on your own?",
+      "trait": "self_learning",
+      "options": [
+        { "text": "Very good", "score": 5 },
+        { "text": "Moderate", "score": 3 },
+        { "text": "Need help", "score": 1 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 2,
+      "question_text": "Do you consider yourself more of a gentle person or a tough person?",
+      "trait": "gentle_tough",
+      "options": [
+        { "text": "Gentle", "score": 5 },
+        { "text": "Tough", "score": 1 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 3,
+      "question_text": "Do you prefer working with others or working independently?",
+      "trait": "teamwork",
+      "options": [
+        { "text": "With others", "score": 5 },
+        { "text": "Independently", "score": 3 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 4,
+      "question_text": "Are you more inclined to work on the management side or the technical side?",
+      "trait": "management_technical",
+      "options": [
+        { "text": "Management", "score": 5 },
+        { "text": "Technical", "score": 3 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 5,
+      "question_text": "Would you rather work in a fast-paced environment or a more relaxed one?",
+      "trait": "work_environment",
+      "options": [
+        { "text": "Fast-paced", "score": 5 },
+        { "text": "Relaxed", "score": 3 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 6,
+      "question_text": "How comfortable are you with taking charge of a project or team?",
+      "trait": "leadership_confidence",
+      "options": [
+        { "text": "Very comfortable", "score": 5 },
+        { "text": "Somewhat comfortable", "score": 3 },
+        { "text": "Not comfortable", "score": 1 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 7,
+      "question_text": "Do you enjoy solving problems or creating new things?",
+      "trait": "problem_solving_style",
+      "options": [
+        { "text": "Solving problems", "score": 5 },
+        { "text": "Creating new things", "score": 3 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 8,
+      "question_text": "How would you describe your overall energy level during the day?",
+      "trait": "energy_level",
+      "options": [
+        { "text": "High", "score": 5 },
+        { "text": "Moderate", "score": 3 },
+        { "text": "Low", "score": 1 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 9,
+      "question_text": "How do you handle stress?",
+      "trait": "stress_response",
+      "options": [
+        { "text": "Stay calm", "score": 5 },
+        { "text": "Get stressed but manage", "score": 3 },
+        { "text": "Often overwhelmed", "score": 1 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 10,
+      "question_text": "How often do you seek feedback to improve your work?",
+      "trait": "feedback_seeking",
+      "options": [
+        { "text": "Always", "score": 5 },
+        { "text": "Occasionally", "score": 3 },
+        { "text": "Rarely", "score": 1 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 11,
+      "question_text": "Are you more of a listener or a talker in a group?",
+      "trait": "communication_style",
+      "options": [
+        { "text": "Listener", "score": 5 },
+        { "text": "Talker", "score": 3 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 12,
+      "question_text": "When faced with challenges, do you prefer detailed instructions or figuring it out yourself?",
+      "trait": "problem_approach",
+      "options": [
+        { "text": "Detailed instructions", "score": 3 },
+        { "text": "Figure it out myself", "score": 5 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 13,
+      "question_text": "How do you typically react when things don’t go according to plan?",
+      "trait": "adaptability",
+      "options": [
+        { "text": "Adapt quickly", "score": 5 },
+        { "text": "Get frustrated", "score": 3 },
+        { "text": "Seek help", "score": 1 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 14,
+      "question_text": "Do you like exploring new ideas and concepts or prefer sticking to what you know?",
+      "trait": "curiosity",
+      "options": [
+        { "text": "Explore new ideas", "score": 5 },
+        { "text": "Stick to what I know", "score": 3 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 15,
+      "question_text": "How do you prefer to handle difficult situations at work or school?",
+      "trait": "conflict_resolution",
+      "options": [
+        { "text": "By discussing it", "score": 5 },
+        { "text": "By analyzing the situation", "score": 3 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 16,
+      "question_text": "Do you tend to focus more on details or the big picture?",
+      "trait": "thinking_style",
+      "options": [
+        { "text": "Details", "score": 5 },
+        { "text": "Big picture", "score": 3 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 17,
+      "question_text": "How do you feel about leadership roles?",
+      "trait": "leadership_preference",
+      "options": [
+        { "text": "I enjoy leading", "score": 5 },
+        { "text": "I’m okay with leading", "score": 3 },
+        { "text": "I prefer to follow", "score": 1 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 18,
+      "question_text": "How important is work-life balance to you?",
+      "trait": "work_life_balance",
+      "options": [
+        { "text": "Very important", "score": 5 },
+        { "text": "Somewhat important", "score": 3 },
+        { "text": "Not important", "score": 1 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 19,
+      "question_text": "Do you prefer tasks that involve a lot of social interaction or less interaction?",
+      "trait": "social_preference",
+      "options": [
+        { "text": "A lot of interaction", "score": 5 },
+        { "text": "Less interaction", "score": 3 }
+      ]
+    },
+    {
+      "level": 1,
+      "question_number": 20,
+      "question_text": "Are you more analytical or creative?",
+      "trait": "thinking_type",
+      "options": [
+        { "text": "Analytical", "score": 5 },
+        { "text": "Creative", "score": 3 }
+      ]
+    }
+  ]
+  

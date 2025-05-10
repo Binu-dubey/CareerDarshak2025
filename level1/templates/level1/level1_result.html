@@ -1,0 +1,86 @@
+{% extends 'website/base.html' %}
+{% load static tailwind_tags %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center text-2xl font-bold mb-3">🧠 Your Personality Type: {{ prediction.predicted_personality }}</h2>
+    <p class="text-center text-lg"><strong>Description:</strong> {{ prediction.description }}</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h4 class="text-xl font-semibold mb-2">🌟 Key Strengths</h4>
+            <ul class="list-disc list-inside">
+                {% for strength in strengths %}
+                    <li>{{ strength }}</li>
+                {% empty %}
+                    <li>No strengths available.</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4 class="text-xl font-semibold mb-2">📉 Growth Areas</h4>
+            <ul class="list-disc list-inside">
+                {% for area in growth_areas %}
+                    <li>{{ area }}</li>
+                {% empty %}
+                    <li>No growth areas listed.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="mt-5 text-center">
+        <h4 class="text-xl font-semibold mb-3">📊 Trait Radar Chart</h4>
+        <canvas id="radarChart" width="400" height="400"></canvas>
+    </div>
+</div>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const radarLabels = {{ radar_data.keys|safe }};
+    const radarValues = {{ radar_data.values|safe }};
+
+    const data = {
+        labels: radarLabels,
+        datasets: [{
+            label: 'Your Scores',
+            data: radarValues,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+            fill: true,
+            tension: 0.3
+        }]
+    };
+
+    const config = {
+        type: 'radar',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                title: {
+                    display: false
+                }
+            },
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    suggestedMax: 100,
+                    ticks: {
+                        stepSize: 10
+                    }
+                }
+            }
+        }
+    };
+
+    new Chart(document.getElementById('radarChart'), config);
+</script>
+{% endblock %}

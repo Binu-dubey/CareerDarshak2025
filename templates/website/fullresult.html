@@ -1,0 +1,930 @@
+{% extends 'website/base.html' %}
+{% load static tailwind_tags %}
+{% load static %}
+{% block title %}Result{% endblock title %}
+{% block content %}
+
+
+<body class="bg-gray-50 font-sans text-gray-800 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white">
+    <div class="container mx-auto flex h-16 items-center justify-between py-4 px-4">
+      <!-- Main Nav -->
+      <div class="flex items-center gap-6 md:gap-10">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">CD</div>
+          <span class="hidden font-bold sm:inline-block">CareerDarshak</span>
+        </a>
+        <nav class="hidden gap-6 md:flex">
+          <a href="index.html" class="text-sm font-medium text-gray-500 transition-colors hover:text-blue-600">
+            Dashboard
+          </a>
+          <a href="assessment.html" class="text-sm font-medium text-gray-500 transition-colors hover:text-blue-600">
+            Assessments
+          </a>
+          <a href="results.html" class="text-sm font-medium transition-colors hover:text-blue-600">
+            Results
+          </a>
+          <a href="#" class="text-sm font-medium text-gray-500 transition-colors hover:text-blue-600">
+            Resources
+          </a>
+        </nav>
+        <button class="md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </svg>
+          <span class="sr-only">Toggle menu</span>
+        </button>
+      </div>
+
+      <!-- User Nav -->
+      <div class="flex items-center gap-4">
+        <button class="relative">
+          <i class="fa-regular fa-bell h-5 w-5"></i>
+          <span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500"></span>
+          <span class="sr-only">Notifications</span>
+        </button>
+        <div class="relative">
+          <button id="user-menu-button" class="relative h-8 w-8 rounded-full">
+            <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
+              <span class="text-blue-700 font-medium">RS</span>
+            </div>
+          </button>
+          <div id="user-menu" class="hidden absolute right-0 mt-2 w-56 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <div class="py-1">
+              <div class="px-4 py-2 font-normal">
+                <p class="text-sm font-medium leading-none">Rahul Sharma</p>
+                <p class="text-xs leading-none text-gray-500 mt-1">rahul.sharma@example.com</p>
+              </div>
+              <hr>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Help & Support</a>
+              <hr>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Log out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 bg-gray-50">
+    <div class="container mx-auto py-6 px-4">
+      <!-- Results Header -->
+      <div class="bg-white rounded-lg shadow-md p-6 mt-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+          <div>
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900">Assessment Results</h1>
+            <p class="text-gray-500 mt-1">Comprehensive Analysis & Personalized Roadmap</p>
+          </div>
+          <div class="mt-4 md:mt-0 flex gap-3">
+            <button class="border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-md flex items-center gap-2">
+              <i class="fa-solid fa-download"></i>
+              Download PDF
+            </button>
+            <button class="border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-md flex items-center gap-2">
+              <i class="fa-solid fa-share-nodes"></i>
+              Share Results
+            </button>
+          </div>
+        </div>
+
+        <div class="p-4 bg-blue-50 rounded-lg border border-blue-200 mb-6">
+          <h3 class="font-semibold text-blue-700 mb-2">Executive Summary</h3>
+          <p class="text-sm">
+            Based on your comprehensive assessment across 6 levels, you show strong alignment with
+            <span class="font-semibold">Data Science</span> and
+            <span class="font-semibold">Software Development</span> career paths. Your analytical thinking,
+            problem-solving abilities, and interest in technology make these fields particularly suitable.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div class="bg-gray-50 rounded-lg p-4 border border-gray-200 flex flex-col items-center">
+            <div class="text-4xl font-bold text-blue-600">92%</div>
+            <div class="text-sm font-medium mt-1">Data Scientist</div>
+            <div class="text-xs text-gray-500">Primary Career Match</div>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-4 border border-gray-200 flex flex-col items-center">
+            <div class="text-4xl font-bold text-blue-500">89%</div>
+            <div class="text-sm font-medium mt-1">Software Developer</div>
+            <div class="text-xs text-gray-500">Secondary Career Match</div>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-4 border border-gray-200 flex flex-col items-center">
+            <div class="text-4xl font-bold text-blue-400">87%</div>
+            <div class="text-sm font-medium mt-1">AI Researcher</div>
+            <div class="text-xs text-gray-500">Tertiary Career Match</div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="mb-6">
+          <div class="border-b border-gray-200">
+            <nav class="flex -mb-px" aria-label="Tabs">
+              <button id="tab-overview" class="tab-button text-blue-600 border-blue-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm w-1/6 text-center">
+                Overview
+              </button>
+              <button id="tab-personality" class="tab-button text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-sm w-1/6 text-center">
+                Personality
+              </button>
+              <button id="tab-aptitude" class="tab-button text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-sm w-1/6 text-center">
+                Aptitude
+              </button>
+              <button id="tab-interests" class="tab-button text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-sm w-1/6 text-center">
+                Interests
+              </button>
+              <button id="tab-careers" class="tab-button text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-sm w-1/6 text-center">
+                Careers
+              </button>
+              <button id="tab-roadmap" class="tab-button text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-sm w-1/6 text-center">
+                Roadmap
+              </button>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="tab-content">
+          <!-- Overview Tab (Default) -->
+          <div id="content-overview" class="tab-content space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                <div class="p-4 border-b border-gray-200">
+                  <h2 class="text-lg font-bold">Assessment Completion</h2>
+                  <p class="text-sm text-gray-500">Your progress across all assessment levels</p>
+                </div>
+                <div class="p-4">
+                  <div class="space-y-4">
+                    <div>
+                      <div class="flex justify-between mb-1 text-sm">
+                        <span>Level 1: Personality</span>
+                        <span>100%</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 100%"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex justify-between mb-1 text-sm">
+                        <span>Level 2: Aptitude</span>
+                        <span>100%</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 100%"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex justify-between mb-1 text-sm">
+                        <span>Level 3: Specialization</span>
+                        <span>100%</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 100%"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex justify-between mb-1 text-sm">
+                        <span>Level 4: Lifestyle</span>
+                        <span>100%</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 100%"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex justify-between mb-1 text-sm">
+                        <span>Level 5: Career Paths</span>
+                        <span>100%</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 100%"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex justify-between mb-1 text-sm">
+                        <span>Level 6: Roadmap</span>
+                        <span>100%</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 100%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                <div class="p-4 border-b border-gray-200">
+                  <h2 class="text-lg font-bold">Your Career Avatar</h2>
+                  <p class="text-sm text-gray-500">Based on your personality assessment</p>
+                </div>
+                <div class="p-4 flex flex-col items-center">
+                  <div class="w-32 h-32 bg-blue-100 rounded-full mb-4 flex items-center justify-center">
+                    <span class="text-4xl">💡</span>
+                  </div>
+                  <h3 class="text-xl font-bold mb-1">The Innovator</h3>
+                  <p class="text-sm text-center text-gray-500 mb-4">
+                    Creative problem-solver who thinks outside the box
+                  </p>
+                  <div class="flex flex-wrap gap-2 justify-center">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">
+                      Creative
+                    </span>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">
+                      Analytical
+                    </span>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">
+                      Forward-thinking
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Career Path Cards -->
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                <div class="h-2 bg-blue-600" style="opacity: 0.92"></div>
+                <div class="p-4 border-b border-gray-200">
+                  <div class="flex justify-between items-center">
+                    <h3 class="font-bold">Data Scientist</h3>
+                    <span class="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded-full border border-blue-100">
+                      92% Match
+                    </span>
+                  </div>
+                </div>
+                <div class="p-4">
+                  <p class="text-sm text-gray-600 mb-4">Analyze complex data to help organizations make better decisions</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Python</span>
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Statistics</span>
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Machine Learning</span>
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Data Visualization</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                <div class="h-2 bg-blue-600" style="opacity: 0.89"></div>
+                <div class="p-4 border-b border-gray-200">
+                  <div class="flex justify-between items-center">
+                    <h3 class="font-bold">Software Developer</h3>
+                    <span class="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded-full border border-blue-100">
+                      89% Match
+                    </span>
+                  </div>
+                </div>
+                <div class="p-4">
+                  <p class="text-sm text-gray-600 mb-4">Design and build computer programs and applications</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">JavaScript</span>
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Problem Solving</span>
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Algorithms</span>
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">System Design</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                <div class="h-2 bg-blue-600" style="opacity: 0.87"></div>
+                <div class="p-4 border-b border-gray-200">
+                  <div class="flex justify-between items-center">
+                    <h3 class="font-bold">AI Researcher</h3>
+                    <span class="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded-full border border-blue-100">
+                      87% Match
+                    </span>
+                  </div>
+                </div>
+                <div class="p-4">
+                  <p class="text-sm text-gray-600 mb-4">Develop and improve artificial intelligence algorithms and systems</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Deep Learning</span>
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">NLP</span>
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Research</span>
+                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Mathematics</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Personality Tab -->
+          <div id="content-personality" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                <div class="p-4 border-b border-gray-200">
+                  <h2 class="text-lg font-bold">Personality Traits</h2>
+                  <p class="text-sm text-gray-500">Your personality assessment results</p>
+                </div>
+                <div class="p-4">
+                  <div class="chart-container">
+                    <canvas id="personalityRadarChart"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                <div class="p-4 border-b border-gray-200">
+                  <h2 class="text-lg font-bold">Personality Type</h2>
+                  <p class="text-sm text-gray-500">Your dominant traits and characteristics</p>
+                </div>
+                <div class="p-4">
+                  <div class="flex flex-col items-center mb-6">
+                    <div class="w-24 h-24 bg-blue-100 rounded-full mb-4 flex items-center justify-center">
+                      <span class="text-4xl">💡</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">The Innovator</h3>
+                    <p class="text-sm text-center text-gray-500 mb-4">
+                      Creative problem-solver who thinks outside the box
+                    </p>
+                  </div>
+
+                  <h4 class="text-sm font-semibold mb-2">Key Strengths</h4>
+                  <ul class="list-disc list-inside text-sm space-y-1 text-gray-600 mb-4">
+                    <li>Strong self-learning capabilities</li>
+                    <li>Excellent problem-solving skills</li>
+                    <li>Ability to work independently</li>
+                    <li>Methodical approach to tasks</li>
+                  </ul>
+
+                  <h4 class="text-sm font-semibold mb-2">Areas for Growth</h4>
+                  <ul class="list-disc list-inside text-sm space-y-1 text-gray-600">
+                    <li>Team collaboration skills</li>
+                    <li>Communication in group settings</li>
+                    <li>Time management under pressure</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aptitude Tab -->
+          <div id="content-aptitude" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                <div class="p-4 border-b border-gray-200">
+                  <h2 class="text-lg font-bold">Academic Aptitude</h2>
+                  <p class="text-sm text-gray-500">Your cognitive abilities assessment</p>
+                </div>
+                <div class="p-4">
+                  <div class="chart-container">
+                    <canvas id="aptitudeBarChart"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                <div class="p-4 border-b border-gray-200">
+                  <h2 class="text-lg font-bold">RIASEC Profile</h2>
+                  <p class="text-sm text-gray-500">Your vocational personality type</p>
+                </div>
+                <div class="p-4">
+                  <div class="chart-container">
+                    <canvas id="riasecDoughnutChart"></canvas>
+                  </div>
+
+                  <div class="mt-4">
+                    <h4 class="text-sm font-semibold mb-2">Your Dominant Types</h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                      Your dominant types are <span class="font-medium">Investigative</span> and
+                      <span class="font-medium">Enterprising</span>, indicating a preference for analytical, intellectual
+                      work with leadership opportunities.
+                    </p>
+
+                    <h4 class="text-sm font-semibold mb-2">Academic Strengths</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">Science</span>
+                      <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">
+                        Mathematics
+                      </span>
+                      <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">
+                        Computer Science
+                      </span>
+                      <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">Statistics</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interests Tab -->
+          <div id="content-interests" class="tab-content hidden">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div class="flex items-center mb-4">
+        <div class="h-8 w-8 rounded-full bg-lifestyle flex items-center justify-center text-white mr-3">
+          <span class="font-bold">4</span>
+        </div>
+        <h2 class="text-xl font-bold">Lifestyle, Hobbies & Desires</h2>
+      </div>
+      
+      <div class="mb-6">
+        <div class="flex justify-between items-center mb-1">
+          <span class="text-sm font-medium">Lifestyle Alignment</span>
+          <span class="text-sm font-medium">75%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="bg-orange-500 h-2.5 rounded-full" style="width: 75%"></div>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h3 class="text-sm font-semibold mb-2">Hobbies & Interests</h3>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-lifestyle/10 text-lifestyle text-xs font-medium px-2.5 py-1 rounded-full border border-lifestyle/30">Coding</span>
+            <span class="bg-lifestyle/10 text-lifestyle text-xs font-medium px-2.5 py-1 rounded-full border border-lifestyle/30">Reading</span>
+            <span class="bg-lifestyle/10 text-lifestyle text-xs font-medium px-2.5 py-1 rounded-full border border-lifestyle/30">Blogging</span>
+            <span class="bg-lifestyle/10 text-lifestyle text-xs font-medium px-2.5 py-1 rounded-full border border-lifestyle/30">Technology</span>
+            <span class="bg-lifestyle/10 text-lifestyle text-xs font-medium px-2.5 py-1 rounded-full border border-lifestyle/30">Problem-Solving</span>
+          </div>
+          
+          <h3 class="text-sm font-semibold mb-2">Motivation Factors</h3>
+          <ul class="list-disc list-inside text-sm space-y-1 text-gray-600">
+            <li>Problem-Solving and Innovation</li>
+            <li>Learning new technologies</li>
+            <li>Creating impactful solutions</li>
+            <li>Intellectual challenges</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold mb-2">Work Environment Preferences</h3>
+          <div class="space-y-3">
+            <div class="flex items-center">
+              <div class="w-1/2 text-sm">Remote vs. Office</div>
+              <div class="w-1/2 bg-gray-200 rounded-full h-2">
+                <div class="bg-lifestyle h-2 rounded-full" style="width: 60%"></div>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-1/2 text-sm">Structured vs. Flexible</div>
+              <div class="w-1/2 bg-gray-200 rounded-full h-2">
+                <div class="bg-lifestyle h-2 rounded-full" style="width: 40%"></div>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-1/2 text-sm">Team vs. Individual</div>
+              <div class="w-1/2 bg-gray-200 rounded-full h-2">
+                <div class="bg-lifestyle h-2 rounded-full" style="width: 50%"></div>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-1/2 text-sm">Fast-paced vs. Steady</div>
+              <div class="w-1/2 bg-gray-200 rounded-full h-2">
+                <div class="bg-lifestyle h-2 rounded-full" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold mb-2">Work-Life Balance</h3>
+          <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <div class="flex items-center mb-3">
+              <div class="h-10 w-10 rounded-full bg-lifestyle/20 flex items-center justify-center text-lifestyle mr-3">
+                <i class="fas fa-balance-scale"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-sm">Preferred Work Style</h4>
+                <p class="text-xs text-gray-500">Indoor, Hybrid (Remote + Office)</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">You prefer a balanced approach with flexibility to work remotely while having occasional in-person collaboration. You value intellectual stimulation and continuous learning opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+          </div>
+
+          <!-- Careers Tab -->
+          <div id="content-careers" class="tab-content hidden">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div class="flex items-center mb-4">
+        <div class="h-8 w-8 rounded-full bg-careerpath flex items-center justify-center text-white mr-3">
+          <span class="font-bold">5</span>
+        </div>
+        <h2 class="text-xl font-bold">Career Path Generation</h2>
+      </div>
+      
+      <div class="mb-6">
+        <div class="flex justify-between items-center mb-1">
+          <span class="text-sm font-medium">Career Path Alignment</span>
+          <span class="text-sm font-medium">92%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="bg-careerpath h-2.5 rounded-full" style="width: 92%"></div>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-sm font-semibold mb-3">Top Career Options</h3>
+          
+          <div class="space-y-3 mb-6">
+            <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+              <div class="flex justify-between items-center">
+                <h4 class="font-medium">Data Scientist</h4>
+                <span class="text-sm font-semibold text-green-600">92% Fit</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">Analyze complex data to help organizations make better decisions</p>
+            </div>
+            
+            <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+              <div class="flex justify-between items-center">
+                <h4 class="font-medium">Software Developer</h4>
+                <span class="text-sm font-semibold text-green-600">89% Fit</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">Design and build computer programs and applications</p>
+            </div>
+            
+            <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+              <div class="flex justify-between items-center">
+                <h4 class="font-medium">AI Researcher</h4>
+                <span class="text-sm font-semibold text-green-600">87% Fit</span>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">Develop and improve artificial intelligence algorithms and systems</p>
+            </div>
+          </div>
+          
+          <h3 class="text-sm font-semibold mb-2">Feasibility Factors</h3>
+          <ul class="list-disc list-inside text-sm space-y-1 text-gray-600">
+            <li>High tool access</li>
+            <li>Strong support system</li>
+            <li>Ready to upskill</li>
+            <li>Aligned with market demand</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold mb-3">Suggested Certifications</h3>
+          
+          <div class="space-y-3 mb-6">
+            <div class="flex items-start p-3 bg-gray-50 rounded-lg border border-gray-200">
+              <div class="h-10 w-10 rounded-full bg-careerpath/20 flex items-center justify-center text-careerpath mr-3 flex-shrink-0">
+                <i class="fab fa-google"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-sm">Google Data Analytics Certificate</h4>
+                <p class="text-xs text-gray-500 mt-1">Learn key analytical skills and how to process and analyze data</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start p-3 bg-gray-50 rounded-lg border border-gray-200">
+              <div class="h-10 w-10 rounded-full bg-careerpath/20 flex items-center justify-center text-careerpath mr-3 flex-shrink-0">
+                <i class="fab fa-ibm"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-sm">IBM AI Engineering</h4>
+                <p class="text-xs text-gray-500 mt-1">Master the concepts and techniques behind AI engineering</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start p-3 bg-gray-50 rounded-lg border border-gray-200">
+              <div class="h-10 w-10 rounded-full bg-careerpath/20 flex items-center justify-center text-careerpath mr-3 flex-shrink-0">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-sm">Coursera ML by Stanford</h4>
+                <p class="text-xs text-gray-500 mt-1">Learn machine learning fundamentals from Andrew Ng</p>
+              </div>
+            </div>
+          </div>
+          
+          <h3 class="text-sm font-semibold mb-3">Career Validation</h3>
+          <div class="h-64">
+            <canvas id="careerValidationChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+          </div>
+
+          <!-- Roadmap Tab -->
+          <div id="content-roadmap" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                <div class="p-4 border-b border-gray-200">
+                  <h2 class="text-lg font-bold">Your Career Roadmap</h2>
+                  <p class="text-sm text-gray-500">Personalized timeline for your career journey</p>
+                </div>
+                <div class="p-4">
+                  <div class="relative">
+                    <div class="p-6 bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center">
+                <h2 class="text-xl font-bold mb-3">Ready to Start Your Career Journey?</h2>
+                <p class="mb-6 text-blue-100 max-w-3xl mx-auto">
+                    This personalized roadmap is your guide to a successful career in Data Science, Software Development, 
+                    or AI Research. Update your progress regularly and adjust your path as you grow.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-blue-700 hover:bg-blue-50 font-medium py-2 px-6 rounded-lg transition-colors">
+                        Download Roadmap PDF
+                    </button>
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                        <a href="roadmap.html">Creer Roadmap</a>
+                    </button>
+                </div>
+            </div>
+            </div>
+            <div class="p-4">
+                    <!-- Personality-Career Reinforcement Matrix -->
+      <div class="mt-8">
+        <h3 class="text-sm font-semibold mb-3">Personality-Career Reinforcement Matrix</h3>
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead>
+              <tr>
+                <th class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Trait</th>
+                <th class="px-4 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Software Developer</th>
+                <th class="px-4 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Data Scientist</th>
+                <th class="px-4 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">UX Designer</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <tr>
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">Analytical Thinking</td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-800">✓</span></td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-800">✓</span></td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100 text-yellow-800">~</span></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">Creativity</td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100 text-yellow-800">~</span></td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-800">✓</span></td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-800">✓</span></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">Team Collaboration</td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-800">✓</span></td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100 text-yellow-800">~</span></td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-800">✓</span></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">Detail-Oriented</td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-800">✓</span></td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-800">✓</span></td>
+                <td class="px-4 py-3 text-center"><span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100 text-yellow-800">~</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Motivational Message -->
+    <div class="bg-primary/10 border border-primary/30 rounded-lg p-6 mb-8">
+      <div class="flex items-start">
+        <div class="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+          <i class="fas fa-lightbulb text-xl"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-primary mb-2">Your Career Journey Begins Now</h3>
+          <p class="text-gray-700">"You are the architect of your future. With focus and consistency, even the most ambitious dreams can become reality. Keep growing, keep building."</p>
+        </div>
+      </div>
+    </div>
+    </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                <div class="p-4 border-b border-gray-200">
+                  <h2 class="text-lg font-bold">Ongoing Projects & Commitments</h2>
+                  <p class="text-sm text-gray-500">Track your progress on career development activities</p>
+                </div>
+                <div class="p-4">
+                  <div class="space-y-4 mb-6">
+                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                      <h4 class="font-medium text-sm">Personal AI Bot</h4>
+                      <div class="flex items-center mt-1">
+                        <div class="w-full bg-gray-200 rounded-full h-1.5 mr-2">
+                          <div class="bg-blue-500 h-1.5 rounded-full" style="width: 45%"></div>
+                        </div>
+                        <span class="text-xs">45%</span>
+                      </div>
+                      <p class="text-xs text-gray-500 mt-2">Building a conversational AI assistant using Python and NLP</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                      <h4 class="font-medium text-sm">Internship with Software Firm</h4>
+                      <div class="flex items-center mt-1">
+                        <div class="w-full bg-gray-200 rounded-full h-1.5 mr-2">
+                          <div class="bg-blue-500 h-1.5 rounded-full" style="width: 20%"></div>
+                        </div>
+                        <span class="text-xs">20%</span>
+                      </div>
+                      <p class="text-xs text-gray-500 mt-2">Working on real-world software development projects</p>
+                    </div>
+                  </div>
+
+                  <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-4">
+                    <h3 class="text-sm font-semibold text-blue-700 mb-2">Daily Commitment</h3>
+                    <div class="flex items-center">
+                      <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                        <span class="text-lg">⏱️</span>
+                      </div>
+                      <div>
+                        <h4 class="font-medium text-sm">Study Time: 2 Hours/Day</h4>
+                        <p class="text-xs text-gray-500 mt-1">Consistent daily practice for skill development</p>
+                      </div>
+                    </div>
+                  </div>
+                   <h3 class="text-sm font-semibold mb-3">Accountability Plan</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6">
+                        <p class="text-sm text-gray-600">Track weekly progress via a learning log. Monthly feedback sessions with a mentor or peer group.</p>
+                    </div>
+                  <h3 class="text-sm font-semibold mb-2">Career Roadmap Tips</h3>
+                  <ul class="list-disc list-inside text-sm space-y-1 text-gray-600">
+                    <li>Build a strong GitHub portfolio with real-world projects</li>
+                    <li>Engage in open-source contributions</li>
+                    <li>Attend tech webinars and conferences for networking</li>
+                    <li>Prepare a compelling LinkedIn profile and resume</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t py-4 bg-white">
+    <div class="container mx-auto flex flex-col items-center justify-between gap-4 md:flex-row px-4">
+      <p class="text-center text-sm text-gray-500">&copy; 2025 CareerDarshak. All rights reserved.</p>
+      <p class="text-center text-sm text-gray-500">AI-Powered Career Assessment Platform</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle user menu
+    document.getElementById('user-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('user-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('user-menu');
+      const button = document.getElementById('user-menu-button');
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+
+    // Tab switching
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Reset all tabs
+        tabButtons.forEach(btn => {
+          btn.classList.remove('text-blue-600', 'border-blue-600');
+          btn.classList.add('text-gray-500', 'border-transparent');
+        });
+        
+        // Hide all content
+        tabContents.forEach(content => {
+          content.classList.add('hidden');
+        });
+        
+        // Activate clicked tab
+        button.classList.remove('text-gray-500', 'border-transparent');
+        button.classList.add('text-blue-600', 'border-blue-600');
+        
+        // Show corresponding content
+        const contentId = 'content-' + button.id.split('-')[1];
+        document.getElementById(contentId).classList.remove('hidden');
+        
+        // Initialize charts if needed
+        if (contentId === 'content-personality') {
+          initPersonalityChart();
+        } else if (contentId === 'content-aptitude') {
+          initAptitudeCharts();
+        }
+      });
+    });
+
+    // Initialize charts
+    function initPersonalityChart() {
+      const ctx = document.getElementById('personalityRadarChart').getContext('2d');
+      if (!ctx.chart) {
+        ctx.chart = new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ['Self-Learning', 'Analytical Thinking', 'Teamwork', 'Communication', 'Adaptability'],
+            datasets: [{
+              label: 'Your Profile',
+              data: [90, 85, 70, 65, 75],
+              backgroundColor: 'rgba(59, 130, 246, 0.2)',
+              borderColor: 'rgba(59, 130, 246, 1)',
+              pointBackgroundColor: 'rgba(59, 130, 246, 1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(59, 130, 246, 1)'
+            }]
+          },
+          options: {
+            scales: {
+              r: {
+                angleLines: {
+                  display: true
+                },
+                suggestedMin: 0,
+                suggestedMax: 100
+              }
+            }
+          }
+        });
+      }
+    }
+
+    function initAptitudeCharts() {
+      // Bar chart for aptitude
+      const barCtx = document.getElementById('aptitudeBarChart').getContext('2d');
+      if (!barCtx.chart) {
+        barCtx.chart = new Chart(barCtx, {
+          type: 'bar',
+          data: {
+            labels: [
+              'Logical Quotient',
+              'Memory Retention',
+              'Problem Solving',
+              'Numerical Ability',
+              'Verbal Reasoning'
+            ],
+            datasets: [{
+              label: 'Aptitude Score',
+              data: [88, 72, 90, 85, 78],
+              backgroundColor: 'rgba(59, 130, 246, 0.7)',
+              borderColor: 'rgba(59, 130, 246, 1)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100
+              }
+            }
+          }
+        });
+      }
+
+      // Doughnut chart for RIASEC
+      const doughnutCtx = document.getElementById('riasecDoughnutChart').getContext('2d');
+      if (!doughnutCtx.chart) {
+        doughnutCtx.chart = new Chart(doughnutCtx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Realistic', 'Investigative', 'Artistic', 'Social', 'Enterprising', 'Conventional'],
+            datasets: [{
+              data: [60, 90, 55, 65, 85, 70],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'right'
+              }
+            }
+          }
+        });
+      }
+    }
+
+    // Initialize default tab charts
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize any charts needed for the default tab
+      setTimeout(() => {
+        if (document.getElementById('content-overview').classList.contains('hidden') === false) {
+          // No charts in overview tab
+        }
+      }, 100);
+    });
+  </script>
+
+{% endblock content %}

@@ -17,6 +17,12 @@ def about(request):
 def contact(request):
     return render(request, 'website/contact.html')
 
+def dashboard(request):
+    return render(request, 'website/dashboard.html')
+
+def fullresult(request):
+    return render(request, 'website/fullresult.html')
+
 class RegistrationView(View):
     def get(self, request):
         form = RegistrationForm()
